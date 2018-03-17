@@ -1,32 +1,14 @@
-const element = {
-  type: 'div',
-  props: {
-    id: 'container',
-    children: [
-      { type: 'input', props: { value: 'foo', type: 'text' } },
-      {
-        type: 'a',
-        props: {
-          href: '/bar',
-          children: [
-            { type: 'TEXT ELEMENT', props: { nodeValue: 'bar' } },
-          ],
-        },
-      },
-      {
-        type: 'span',
-        props: {
-          onClick: () => { alert('Hi'); },
-          children: [
-            {
-              type: 'TEXT ELEMENT',
-              props: { nodeValue: 'Foo' },
-            },
-          ],
-        },
-      },
-    ],
-  },
-};
+/** @jsx Diduct.createElement */
+
+const Diduct = require('./main');
+
+const element = (
+  <div id="container">
+    <input value="foo" type="text" />
+    <a href="/bar">bar</a>
+    <button onClick={() => (console.log('Hi'))}>click me</button>
+  </div>
+);
+
 
 module.exports = element;
